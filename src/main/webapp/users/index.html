@@ -5,8 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-  <div th:each="user:${usersByName}" th:text="${user}">
-
-  </div>
+<div th:each="user,state : ${users}">
+    <a th:text="${state.count + '.' + user.getName() + ', ' + user.getSurname() + ', ' + user.getdateOfBirth()}"></a>
+</div>
 </body>
 </html>

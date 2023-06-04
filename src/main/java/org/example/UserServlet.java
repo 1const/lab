@@ -21,10 +21,12 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("name");
-        List<User> usersByName = userRepository.findByName(name);
+//        String name = req.getParameter("name");
+//        List<User> usersByName = userRepository.findByName(name);
 
-        req.setAttribute("usersByName", usersByName);
+        List<User> users = userRepository.findAll();
+
+        req.setAttribute("users", users);
     }
 
 }
